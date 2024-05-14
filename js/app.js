@@ -11,6 +11,9 @@ const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
+//Variables
+let LIST = [], id=0;
+
 // Show todays date
 const options = {weekday : "long", month:"short", day:"numeric"};
 const today = new Date();
@@ -43,9 +46,22 @@ document.addEventListener("keyup",function(even){
         const toDo = input.value;
         //if the input isn't empty
         if(toDo){
-            addtoDo(toDo);
+            addtoDo(toDo, id, false, false);
+
+            LIST.push({
+                name : toDo?
+                id: id,
+                done: false,
+                trash: false
+            });
+            id ++;
+            input.value = "";
+
+
         }
         input.value = "";
     }
 })
+
+
 
