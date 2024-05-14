@@ -12,7 +12,12 @@ const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
 //Variables
-let LIST = [], id=0;
+let LIST,id;
+
+//get item from local storage
+
+//add item to localstorage (this code must be added where the LIST array is updated)
+localStorage.setItem("TODO", JSON.stringify(LIST));
 
 // Show todays date
 const options = {weekday : "long", month:"short", day:"numeric"};
@@ -87,7 +92,7 @@ list.addEventListener("click", function(event){
 
     if(elementJob == "complete"){
         completeToDo(element);
-    }else if(elementJob == "remove"){
+    }else if(elementJob == "delete"){
         removeToDo(element);
     }
 });
