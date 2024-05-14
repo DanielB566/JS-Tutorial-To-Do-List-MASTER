@@ -73,3 +73,9 @@ function completeToDo(element){
 }
 
 
+//remove to do
+function removeToDo(element){
+    element.parentNode.parentNode.removeChild(element.parentNode);
+    LIST[element.id].trash = true;
+}
+
