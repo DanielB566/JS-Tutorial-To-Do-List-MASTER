@@ -12,11 +12,14 @@ const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
 //Variables
-let LIST,id;
+let LIST
+let id
 
 //get item from local storage
 let data = localStorage.getItem("TODO");
 
+
+/*code that isnt working try and fix it next time!!!!!!!!!!!
 //Check if data is not empty
 if(data){
     LIST = JSON.parse(data);
@@ -27,6 +30,22 @@ if(data){
     LIST = [];
     id = 0;
 }
+*/
+
+
+//load items to the user's interface 
+function loadList(array){
+    array.forEach(function(item){
+        addtoDo(item.name, item.id, item.done, item.trash);
+    
+    });
+}
+
+//clear local storage
+clear.addEventListener("click", function(){
+    localStorage.clear();
+    location.reload()
+});
 
 
 // Show todays date
@@ -56,7 +75,7 @@ function addtoDo(toDo, id, done, trash) {
 
 //add an item to the list user the enter key
 
-document.addEventListener("keyup",function(even){
+document.addEventListener("keyup",function(event){
     if(event.keyCode == 13){
         const toDo = input.value;
         //if the input isn't empty
