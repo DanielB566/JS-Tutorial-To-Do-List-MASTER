@@ -19,7 +19,7 @@ let id
 let data = localStorage.getItem("TODO");
 
 
-/*code that isnt working try and fix it next time!!!!!!!!!!!
+
 //Check if data is not empty
 if(data){
     LIST = JSON.parse(data);
@@ -30,7 +30,7 @@ if(data){
     LIST = [];
     id = 0;
 }
-*/
+
 
 
 //load items to the user's interface 
